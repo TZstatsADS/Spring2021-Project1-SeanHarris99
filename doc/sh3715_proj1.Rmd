@@ -63,7 +63,7 @@ ggplot(anes_income,
                              "lightgoldenrod1","black"))+ 
   facet_wrap(~income, ncol=1) + 
   theme(axis.text.x = element_text(angle = 90))+ 
-  labs(title="How does income bracket relate to your presidential vote?")
+  labs(title="How does income bracket relate to your presidential vote?",y="")
 ggsave("../figs/income.png")
 ```
 <br>At a glance, some patterns are clear: less wealthy people vote far less than the wealthy, and tend to vote less Republican. Other interesting artifacts can be observed, like 1992's third party vote being concentrated in the middle to upper-middle class bracket.
@@ -87,7 +87,7 @@ ggplot(anes_income_net,
                              "firebrick2", "gold1", 
                              "lightgoldenrod1","black"))+ 
   theme(axis.text.x = element_text(angle = 90))+ 
-  labs(title="How does income bracket relate to your presidential vote?")
+  labs(title="How does income bracket relate to your presidential vote?",y="Vote Distribution")
 ggsave("../figs/income_net.png")
 
 ```
