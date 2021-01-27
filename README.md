@@ -2,27 +2,11 @@
 ## Spring 2021
 ## Project 1: A "data story" on how Americans vote
 
-<img src="figs/title1.jpeg" width="500">
+Sean Harris
 
-### [Project Description](doc/)
-This is the first and only *individual* (as opposed to *team*) this semester. 
+Key Findings:
 
-Term: Spring 2021
-
-+ Projec title: Lorem ipsum dolor sit amet
-+ This project is conducted by [your name]
-
-+ Project summary: [a short summary] Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Following [suggestions](http://nicercode.github.io/blog/2013-04-05-projects/) by [RICH FITZJOHN](http://nicercode.github.io/about/#Team) (@richfitz). This folder is orgarnized as follows.
-
-```
-proj/
-├── lib/
-├── data/
-├── doc/
-├── figs/
-└── output/
-```
-
-Please see each subfolder for a README file.
+1. People with low incomes vote much less than the wealthy.
+2. The wealthy vote more Republican than any other income group.
+3. However, since 2000 the wealthy have been shifting Democratic.
+4. Since 1970 wealthy professions have been shifting Democratic.
