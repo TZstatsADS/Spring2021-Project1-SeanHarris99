@@ -9,7 +9,6 @@ output:
 
 
 <font size="4"> 0. Introduction </font>
-<br> preamble
 
 <font size="3"> 0.1 Loading Libraries and Data </font>
 <br> First the necessary packages are installed and loaded with the pacman package. Then the ANES data is loaded from a .sav file with the haven package.
@@ -28,7 +27,6 @@ save(anes_dat,file="../output/anes_dat.sav")
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 
-#Election_years=as.character(seq(1952, 2016, 4))
 anes_use=anes_dat%>% 
   mutate( 
     year=as_factor(VCF0004), 
@@ -106,7 +104,6 @@ ggplot(fit$model, aes_string(x = names(fit$model)[2], y = names(fit$model)[1])) 
   geom_point() +
   stat_smooth(method = "lm", col = "red") +
   labs(title = paste("R2 = ",signif(summary(fit)$r.squared, 5)))
-#ggsave(paste("../figs/",names(fit$model)[2],".png"))
 
 #Citation:https://sejohnston.com/2012/08/09/a-quick-and-easy-function-to-plot-lm-results-in-r/
 }
@@ -142,7 +139,7 @@ grid.arrange(d_r,r_r,n_r,ncol=3, nrow = 1)
 
 ```
 <br>The three patterns appear to hold. There is no clear linear relationship between income and democratic vote. And there is a strong linear positive correlation between income and Republican vote, and a strong linear negative correlation for nonvoters.
-<br>The regression suggests a 1-percentile increase in wealth correlates with a .36% increase of Republican vote and a .33% decrease in abstaining from voting. 
+<br>The regression suggests a 1-percentile increase in wealth correlates with a .36% increase of Republican vote and a .33% decrease in abstaining from voting. While this relationship is strong, it is not necessarily causal, and it is important to keep in mind confounding variables like race or geography that are not the focus of this analysis.
 
 <br> Since the wealthy appear to vote strongly Republican, we can look at how the rich vote changes over time.
 
@@ -157,7 +154,7 @@ save(anes_income_rep_rich,file="../output/anes_income_rep_rich.sav")
 
 lin=lm(anes_income_rep_rich$prop~seq(2000, 2016, by=4))
 
-ggplotRegression(lm(anes_income_rep_rich$prop~seq(2000, 2016, by=4)))+ labs(title="",y="Proportion of Republicans",x="Year")
+ggplotRegression(lm(anes_income_rep_rich$prop~seq(2000, 2016, by=4)))+ labs(title="% Wealthy voting Red (96+ percentile wealth)",y="Proportion Republican",x="Year")
 ggsave("../figs/rich_vote.png")
 
 
@@ -194,7 +191,7 @@ ggsave("../figs/occupations.png")
 ```
 
 <br>At a glance, we can see how higher-salary Professional and Managerial occupations have much higher voter turnout, while lower-salary Laborers have very low turnout. 
-<br> We can do a linear regression analysis to see if higher-salary occupations are becoming less Republican.
+<br> We can do a linear regression analysis to see if higher-salary occupations are becoming less Republican, as the data so far has suggested.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 regression_pmc = anes_occupation %>%
@@ -207,7 +204,7 @@ ggsave("../figs/pmc.png")
 
 ```
 
-<br>The regression suggests Professional and Managerial voters have grown increasingly Democratic since the 70s. 
+<br>The regression suggests Professional and Managerial voters have grown increasingly Democratic since the 70s. As expected, this wealthier cohort has trended liberal over time. This is just one group, and further analysis into the connection with education and urbanism could be interesting.
 
 
 
